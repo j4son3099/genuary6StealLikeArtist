@@ -37,16 +37,17 @@ background(255)
 
 //shape from "Spinning Cylinders" by Lisa Sekaida
 function draw() {
-translate(mouseX-windowWidth/2>>0,mouseY-windowHeight/2>>0,0)
+
 if (!loaded&&img) {
 	push()
-	image(img, -WIDTH/3>>0, -HEIGHT/3>>0, WIDTH, HEIGHT);
+	translate(-windowWidth/2>>0,-windowHeight/2>>0,0)
+	image(img, 0,0, WIDTH, HEIGHT);
 	loaded = true
 	fInput.hide()
 	pop()
 	}
 
-
+translate(mouseX-windowWidth/2>>0,mouseY-windowHeight/2>>0,0)
 if (m<3){
 	for (let i = 0; i < 10; i++) {
 	rotateZ(PI/64);
